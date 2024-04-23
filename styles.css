@@ -1,0 +1,38 @@
+#calculatorContainer {
+    border: 1px solid black;
+    margin: 200px auto;
+    width: 256px;
+    height: 358px;
+    padding: 10px;
+}
+
+#display {
+    margin: 0 auto;
+    width: 240px;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+    border: 1px solid black;
+    padding-right: 10px;
+    margin-bottom: 7px;
+}
+
+#btnContainer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btnSmallNum,
+.btnSmallOperation,
+#btnDelete {
+    width: 57px;
+    height: 57px;
+    margin: 2px;
+}
+
+
+.btnLarge {
+    width: 57px;
+    height: 239px;
+    margin: 2px 2px 0 0;
+}
