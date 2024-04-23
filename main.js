@@ -21,15 +21,25 @@ function add(a, b) {
 }
 
 function substract(a, b) {
-    return a-b;
+    aA = Number(a);
+    bB = Number(b);
+    return aA-bB;
 }
 
 function multiply (a, b) {
-    return a*b;
+    aA = Number(a);
+    bB = Number(b);
+    return aA*bB;
 }
 
 function divide (a, b) {
-    return a/b;
+    aA = Number(a);
+    bB = Number(b);
+    if (bB === 0) {
+        return "You tried."
+    }   else {
+        return aA/bB;
+    }
 }
 
 function operate (a, b, c) {
@@ -99,17 +109,25 @@ function handleClickResultado() {
     if (a === "" || b === "") {
         return;
     }   else {
-        b = display.textContent;
-        display.textContent = operate (a, b, c);
-        resultClicked = true;
+        if (resultClicked === true) {
+            display.textContent = operate (a, b, c);
+            a = display.textContent;
+        }   else {
+            b = display.textContent;
+            display.textContent = operate (a, b, c);
+            a = display.textContent;
+            resultClicked = true;
+        }
     }
+    console.log('a'+a);
+    console.log('b'+b);
 }
 
 function handleClickDelete() {
-    display.textContent = ""
-    a = ""
-    b = ""
-    c = ""
+    display.textContent = "";
+    a = 0;
+    b = 0;
+    c = "";
     resultClicked = false;
 }
 
