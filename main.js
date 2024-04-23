@@ -98,7 +98,7 @@ function handleClickNum(event) {
 
 function handleClickOperation(event) {
     if (!isNaN(display.textContent)) {
-        a = display.textContent
+        a = Number(display.textContent);
     }
     if (event.target.id === "btnPlus") {
         display.textContent = "+";
@@ -116,7 +116,7 @@ function handleClickOperation(event) {
 }
 
 function handleClickResultado() {
-    if (a === 0 || b === 0) {
+    if (display.textContent === "+" || display.textContent === "-" || display.textContent === "x" || display.textContent === "/") {
         return;
     }   else {
         if (resultClicked === true) {
