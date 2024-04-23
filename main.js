@@ -4,12 +4,14 @@ const btnResultado = document.querySelector("#btnResultado");
 const display = document.querySelector("#display");
 const btnDelete = document.querySelector("#btnDelete");
 const btnSmallSign = document.querySelector("#btnSmallSign");
+const btnBackspace = document.querySelector("#btnBackspace");
 
 allSmallNumBtns.forEach(btn => btn.addEventListener("click", handleClickNum));
 allSmallOperationBtns.forEach(btn => btn.addEventListener("click", handleClickOperation));
 btnResultado.addEventListener("click", handleClickResultado);
 btnDelete.addEventListener("click", handleClickDelete);
 btnSmallSign.addEventListener("click", handleSign);
+btnBackspace.addEventListener("click", handleDel);
 
 let a = '';
 let b = '';
@@ -138,13 +140,19 @@ function handleClickDelete() {
 }
 
 function handleSign() {
-    console.log(a);
-    console.log(b);
-    console.log(c);
     if (isNaN(display.textContent)) {
         return;
     }   else {
         display.textContent = Number(display.textContent)*(-1);
+    }
+}
+
+function handleDel() {
+    if (isNaN(display.textContent)) {
+        return;
+    }   else {
+       let str = display.textContent;
+       display.textContent = str.slice(0, -1);
     }
 }
 

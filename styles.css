@@ -53,3 +53,7 @@ button {
 #btnBackspace {
     background-color: red;
 }
+
+#btnDelete {
+    background-color: beige;
+}
