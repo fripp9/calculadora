@@ -6,7 +6,13 @@
     padding: 10px;
 }
 
+button {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 #display {
+    font-size: 20px;
     margin: 0 auto;
     width: 240px;
     height: 40px;
@@ -24,15 +30,26 @@
 
 .btnSmallNum,
 .btnSmallOperation,
-#btnDelete {
+#btnDelete,
+#btnSmallSign,
+#btnBackspace {
     width: 57px;
     height: 57px;
     margin: 2px;
 }
 
+.btnSmallOperation {
+    background-color: yellow;
+}
+
 
 .btnLarge {
     width: 57px;
-    height: 239px;
-    margin: 2px 2px 0 0;
+    height: 118px;
+    margin: 2px;
+    background-color: green;
+}
+
+#btnBackspace {
+    background-color: red;
 }

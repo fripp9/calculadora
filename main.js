@@ -3,15 +3,17 @@ const allSmallOperationBtns = document.querySelectorAll(".btnSmallOperation");
 const btnResultado = document.querySelector("#btnResultado");
 const display = document.querySelector("#display");
 const btnDelete = document.querySelector("#btnDelete");
+const btnSmallSign = document.querySelector("#btnSmallSign");
 
 allSmallNumBtns.forEach(btn => btn.addEventListener("click", handleClickNum));
 allSmallOperationBtns.forEach(btn => btn.addEventListener("click", handleClickOperation));
 btnResultado.addEventListener("click", handleClickResultado);
 btnDelete.addEventListener("click", handleClickDelete);
+btnSmallSign.addEventListener("click", handleSign);
 
-let a;
-let b;
-let c;
+let a = '';
+let b = '';
+let c = '';
 let resultClicked = false;
 
 function add(a, b) {
@@ -84,12 +86,18 @@ function handleClickNum(event) {
     }   else if (event.target.id === "num0") {
         display.append("0");
     }   else if (event.target.id === "numPoint") {
-        display.append(".");
+        if (display.textContent.includes(".")) {
+            return;
+        }   else {
+            display.append(".");
+        }
     }
 }   
 
 function handleClickOperation(event) {
-    a = display.textContent
+    if (!isNaN(display.textContent)) {
+        a = display.textContent
+    }
     if (event.target.id === "btnPlus") {
         display.textContent = "+";
         c = "+";
@@ -106,7 +114,7 @@ function handleClickOperation(event) {
 }
 
 function handleClickResultado() {
-    if (a === "" || b === "") {
+    if (a === 0 || b === 0) {
         return;
     }   else {
         if (resultClicked === true) {
@@ -119,16 +127,25 @@ function handleClickResultado() {
             resultClicked = true;
         }
     }
-    console.log('a'+a);
-    console.log('b'+b);
 }
 
 function handleClickDelete() {
-    display.textContent = "";
-    a = 0;
-    b = 0;
-    c = "";
+    display.textContent = '';
+    a = '';
+    b = '';
+    c = '';
     resultClicked = false;
+}
+
+function handleSign() {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    if (isNaN(display.textContent)) {
+        return;
+    }   else {
+        display.textContent = Number(display.textContent)*(-1);
+    }
 }
 
 
