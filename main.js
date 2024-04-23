@@ -118,6 +118,8 @@ function handleClickOperation(event) {
 function handleClickResultado() {
     if (display.textContent === "+" || display.textContent === "-" || display.textContent === "x" || display.textContent === "/") {
         return;
+    }   else if (a === '') {
+        return;
     }   else {
         if (resultClicked === true) {
             display.textContent = operate (a, b, c);
