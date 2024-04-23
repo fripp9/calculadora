@@ -122,11 +122,11 @@ function handleClickResultado() {
         return;
     }   else {
         if (resultClicked === true) {
-            display.textContent = operate (a, b, c);
+            display.textContent = operate(a, b, c);
             a = display.textContent;
         }   else {
             b = display.textContent;
-            display.textContent = operate (a, b, c);
+            display.textContent = operate(a, b, c);
             a = display.textContent;
             resultClicked = true;
         }
